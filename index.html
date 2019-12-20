@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Restaurant</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="main-encabezado">
+        <h1 class="margen">E-Restaurant</h1>
+    </header>
+    <section class="seccion">
+        <header class="sec-encabezado">
+            <h2 class="margen">Mesas</h2>
+        </header>
+        <article class="art">
+            <table class="tabla" id ="tablaMesasActivas">
+                <tr class="filas">
+                    <th>Numero de Mesa</th>
+                    <th>Cuenta</th>
+                    <th>Cerrar Mesa</th>
+                    <th>Eliminar Mesa</th>
+                </tr>
+            </table>
+        </article>
+        <article class ="art">
+            <form>
+                <input type="text" class="texto" id="txtMesa" placeholder="Número de Mesa">
+                <input type="button" value="Agregar Mesa" class ="boton" id="agregarMesa">
+            </form>
+        </article>
+    </section>
+    
+    <section class="seccion">
+        <header class="sec-encabezado">
+            <h2 class="margen">Cargar Productos a Mesa</h2>
+        </header>
+        <article class="art">
+            <table class="tabla" id="tablaCargaProductos">
+                <tr class="filas">
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                </tr>
+            </table>
+        </article>
+        <article class="art">
+            <form>
+                <select id="mesaCargaCuenta">
+
+                </select>
+                <input type="button" value="Agregar A Mesa" class ="boton" id="agregarAMesa">
+            </form>
+        </article>
+
+    </section>
+
+    <section class="seccion">
+            <header class="sec-encabezado">
+                <h2 class="margen">Menú</h2>
+            </header>
+            <article class="art">
+                <table class="tabla" id="tablaMenu">
+                    <tr class="filas">
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Eliminar Producto</th>
+                    </tr>
+                </table>
+            </article>
+            <article class ="art">
+                <form>
+                    <input type="text" class="texto" id="txtProducto" placeholder="Nombre del Producto">
+                    <input type="text" class="texto" id="productoPrecio" placeholder="Precio">
+                    <input type="button" value="Agregar Producto" class ="boton" id="agregarProducto">
+                </form>
+            </article>
+    </section>
+
+    <footer>
+        <script src="js/funcionesHTML.js"></script>
+        <script src="js/productoMesa.js"></script>
+        <script src="js/cuentamesa.js"></script>
+        <script src="js/mesas.js"></script>
+        <script src="js/mesasactivas.js"></script>
+        <script src="js/productos.js"></script>
+        <script src="js/listaproductos.js"></script>
+    </footer>
+</body>
+
+</html>
