@@ -28,8 +28,8 @@ const mesasActivas = {
 
     eliminar: function(mesa){
         let index = this.lista.findIndex((mesaactiva)=>{
-            return mesaactiva.id === mesa.id});
-        this.lista.splice(index,1);
+            return mesaactiva.id == mesa});
+            this.lista.splice(index,1);
     },
 };
 

@@ -96,8 +96,6 @@ botonAgregarAMesa.addEventListener("click", () => {
         return mesasactivas.id == mesaElegida;
     });
     let listaproductos = document.querySelectorAll("#tablaCargaProductos > tr");
-    //por mesa, agarra Cuenta, y ahi
-    // loop de todo el array de productos para que pushee
     for(let producto of listaproductos){
     mesasActivas.lista[mesabuscada].cuenta.agregar(producto.cells[0].id,
         producto.cells[1].childNodes[0].value);
@@ -118,9 +116,18 @@ const addBotonEliminarProducto = ()=> {
     newBotonEliminar.classList.add("eliminar");
     newBotonEliminar.addEventListener("click", () => {
         newBotonEliminar.parentElement.parentElement.remove();
+        let productoAEliminar = newBotonEliminar.parentElement.parentElement.firstChild.id;
+        eliminarProductoDeCuentaMesa(productoAEliminar); // TODAVIA NO LO ELIMINA
     });
     return newBotonEliminar;
 };
+
+/**
+ * 
+ * ACTUALIZAR DE UNA TODA LA LISTA, NO POR CADA VEZ QUE SE AGREGA UN PRODUCTO!
+ *  - FUNCION MAS RAPIDA QUE LA QUE ESTOY HACIENDO
+ * 
+ */
 
 const agregarProductoAlHTML= (producto)=> {
     let list = document.querySelector("#tablaMenu");
@@ -130,6 +137,7 @@ const agregarProductoAlHTML= (producto)=> {
 
     let productoNuevoId = document.createElement("td");
     productoNuevoId.innerHTML = producto.id;
+    productoNuevoId.id = producto.id;
 
     let productoNuevoNombre = document.createElement("td");
     productoNuevoNombre.innerHTML = producto.producto;
@@ -170,7 +178,13 @@ const agregarProductoParaCuentaMesa=(producto)=>{
 };
 
 const eliminarProductoDeCuentaMesa=(producto)=>{
-
+    let productosEnCuenta = document.querySelectorAll("#tablaCargaProductos > tr");
+    for (let producto of productosEnCuenta){
+        console.log(producto.cells[0].id)
+        if (producto.cells[0].id ==producto){
+            producto.remove();
+        }
+    }
 };
 
 let botonAgregarProducto = document.querySelector("#agregarProducto");
