@@ -5,11 +5,16 @@ try {
 } catch(e){}
 
 ///////////////////////////* FUNCIONES DE MESAS OCUPADAS *////////////////////////////////////
+const showCuenta =()=>{
+    let cuentaMesa = document.querySelector(".modal");
+    cuentaMesa.style.display="block";
+};
 
 const addBotonCerrar = ()=>{  //PENDIENTE CREACION DE MODAL
     let newBotonCerrar = document.createElement("button");
     newBotonCerrar.innerHTML = "Cerrar";
     newBotonCerrar.classList.add("cerrar");
+    newBotonCerrar.addEventListener("click",showCuenta);
     return newBotonCerrar;
 };
 
@@ -194,7 +199,16 @@ botonAgregarProducto.addEventListener("click", () => {
     document.querySelector("#txtProducto").value = "";
     document.querySelector("#productoPrecio").value = "";
 });
+////////////////////////////////////FUNCIONES DENTRO DEL MODAL///////////////////////////////////
 
+let cierre = document.querySelector(".close");
+cierre.addEventListener("click",()=>{
+        let ventanaCuenta = document.querySelector(".modal");
+        ventanaCuenta.style.display="none";
+});
+
+let imprimir = document.querySelector(".print");
+imprimir.addEventListener("click",()=>{print()});
 
 try {
     module.exports = {

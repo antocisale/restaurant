@@ -8,6 +8,7 @@
     <title>Ejercicio Restaurant</title>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/423e485247.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -80,6 +81,38 @@
                     <input type="button" value="Agregar Producto" class ="boton" id="agregarProducto">
                 </form>
             </article>
+    </section>
+    <section class ="modal">
+        <div id = "cierreCuenta" class="modal-content">
+            <div>
+                <span class="close">&times;</span>
+                <div class="modal-title">X</div>
+                <div class="modal-title">DOCUMENTO NO VALIDO COMO FACTURA</div>
+            </div>
+            <div>
+                Fecha: <span id="modal-fecha"></span>
+            </div>
+            <div>
+                Hora: <span id="modal-hora"></span>
+            </div>
+            <div>
+                Mesa: <span id ="modal-mesa"></span>
+            </div>
+            <table>
+                <th>
+                    <td>Producto</td>
+                    <td>Cantidad</td>
+                    <td>Precio</td>
+                </th>
+            </table>
+            <div>
+                Total: <span id="modal-total"></span>
+            </div>
+            <h3 class ="modal-title">PROPINA NO INCLUIDA</h3>
+            <div>
+                <a class="print"><i class="fas fa-print"></i></a>
+            </div>
+        </div>
     </section>
 
     <footer>
